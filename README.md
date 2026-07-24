@@ -132,3 +132,4 @@ zavor_web/
 
 ## 📄 Licencia
 Este proyecto es una iniciativa de desarrollo e ingeniería social sustentada por la comunidad estudiantil de la **UNTELS (Universidad Nacional Tecnológica de Lima Sur)**.
+# zavor_web
