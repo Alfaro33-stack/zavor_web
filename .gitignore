@@ -1,0 +1,23 @@
+# Entorno Virtual Python
+venv/
+env/
+ENV/
+
+# Archivos compilados e intermediarios de Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Base de datos SQLite local (opcional)
+*.sqlite3-journal
+
+# Archivos de entorno e IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Logs
+*.log
