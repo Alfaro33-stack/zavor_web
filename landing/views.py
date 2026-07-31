@@ -2,7 +2,7 @@ import os
 from io import BytesIO
 from django.conf import settings
 from django.http import FileResponse, Http404, HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 def home(request):
     """
@@ -75,31 +75,7 @@ def home(request):
 
 def download_apk(request):
     """
-    Vista encargada de servir el archivo APK directamente sin intermediarios.
+    Vista encargada de redireccionar a la descarga del APK directamente desde Firebase Storage.
     """
-    apk_dir = os.path.join(settings.BASE_DIR, 'landing', 'static', 'apk')
-    apk_path = os.path.join(apk_dir, 'zavor-v1.0.apk')
-
-    # Garantizar que el directorio exista
-    os.makedirs(apk_dir, exist_ok=True)
-
-    # Si el APK aún no existe físicamente, creamos un instalador demostrativo para pruebas
-    if not os.path.exists(apk_path):
-        dummy_apk_content = (
-            b"PK\x03\x04\x14\x00\x00\x00\x08\x00ZAVOR_APK_DEMO_BINARY_PACKAGE_V1_0"
-            b"\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x0c\x00\x00\x00"
-            b"AndroidManifest.xmlZavorAppVillaElSalvadorGastronomy"
-        )
-        with open(apk_path, 'wb') as f:
-            f.write(dummy_apk_content)
-
-    try:
-        response = FileResponse(
-            open(apk_path, 'rb'),
-            content_type='application/vnd.android.package-archive'
-        )
-        response['Content-Disposition'] = 'attachment; filename="ZavorApp-v1.0-VillaElSalvador.apk"'
-        response['Content-Length'] = os.path.getsize(apk_path)
-        return response
-    except Exception as e:
-        raise Http404(f"Error al descargar la aplicación ZavoR: {str(e)}")
+    firebase_apk_url = "https://firebasestorage.googleapis.com/v0/b/zavor-fe238.firebasestorage.app/o/app%2FZavoR.apk?alt=media&token=90d69524-8611-4a3b-af6b-e96f00d935e3"
+    return redirect(firebase_apk_url)

@@ -11,21 +11,33 @@
         content="Zavor, Huariques, Villa El Salvador, Pollerias, Cebicherias, Comida Peruana, Descargar APK Zavor, UNTELS">
     <title>ZavoR App | Los Mejores Huariques de Villa El Salvador</title>
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts (Poppins, Outfit, Plus Jakarta Sans) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
     <!-- FontAwesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
+    <link rel="icon" type="image/png" href="{% static 'images/logo.png' %}">
 
-    <!-- Custom CSS (v19.0 con Fotos Más Grandes 145px e Íconos al lado del Nombre) -->
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}?v=19.0">
+    <!-- Custom CSS (v30.0 con Logo Original Restaurado) -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}?v=30.0">
+
+    <!-- Anti-FOUC Theme Script (Predeterminado: Modo Oscuro) -->
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('zavor_theme');
+            if (savedTheme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
 </head>
 
 <body>
@@ -39,11 +51,11 @@
         <div class="container nav-content">
             <a href="#" class="logo">
                 <div class="logo-icon">
-                    <img src="{% static 'images/logo.png' %}" alt="Zavor Logo"
+                    <img src="{% static 'images/logo1.png' %}" alt="Zavor Logo"
                         style="max-height: 44px; width: auto; object-fit: contain;">
                 </div>
                 <span
-                    style="font-family: 'Outfit', sans-serif; font-weight: 800; color: #0D1117; font-size: 1.6rem; letter-spacing: -0.5px;">ZavoR</span>
+                    style="font-family: 'Inter', sans-serif; font-weight: 500; color: var(--text-main); font-size: 1.6rem; letter-spacing: -0.2px;">ZavoR</span>
                 <span class="logo-badge">VES</span>
             </a>
 
@@ -58,13 +70,15 @@
             </ul>
 
             <div class="header-right-actions" style="display: flex; align-items: center; gap: 0.6rem;">
+
+
                 <!-- Botón Menú Hamburguesa para Celulares ☰ -->
                 <button class="mobile-menu-btn" id="mobileMenuBtn" onclick="toggleMobileNav()" aria-label="Abrir Menú">
                     <i class="fa-solid fa-bars"></i>
                 </button>
 
-                <a href="{% url 'landing:download_apk' %}" onclick="handleDownload(event)"
-                    class="btn btn-primary nav-apk-btn">
+                <a href="https://firebasestorage.googleapis.com/v0/b/zavor-fe238.firebasestorage.app/o/app%2FZavoR.apk?alt=media&token=90d69524-8611-4a3b-af6b-e96f00d935e3"
+                    target="_blank" class="btn btn-primary nav-apk-btn">
                     <i class="fa-brands fa-android"></i> <span class="nav-btn-text">Descargar APK</span>
                 </a>
             </div>
@@ -81,7 +95,7 @@
                         style="max-height: 36px; width: auto; object-fit: contain;">
                 </div>
                 <span
-                    style="font-family: 'Outfit', sans-serif; font-weight: 800; color: #0D1117; font-size: 1.35rem;">ZavoR</span>
+                    style="font-family: 'Outfit', sans-serif; font-weight: 800; color: var(--text-main); font-size: 1.35rem;">ZavoR</span>
                 <span class="logo-badge">VES</span>
             </div>
             <button class="mobile-drawer-close" onclick="closeMobileNav()">
@@ -100,13 +114,18 @@
                     Huariques Destacados</a></li>
             <li><a href="#nosotros" onclick="closeMobileNav()"><i class="fa-solid fa-users text-orange"></i>
                     Nosotros</a></li>
-            <li><a href="#resenas" onclick="closeMobileNav()"><i class="fa-solid fa-comments text-orange"></i>
-                    Reseñas</a></li>
+            <li><a href="#ods" onclick="closeMobileNav()"><i class="fa-solid fa-leaf text-orange"></i> Impacto ODS</a>
+            </li>
+            <li><a href="#resenas" onclick="closeMobileNav()"><i class="fa-solid fa-star text-orange"></i> Reseñas</a>
+            </li>
         </ul>
 
+
+
         <div style="margin-top: 2rem;">
-            <a href="{% url 'landing:download_apk' %}" onclick="handleDownload(event); closeMobileNav();"
-                class="btn btn-primary" style="width: 100%; justify-content: center;">
+            <a href="https://firebasestorage.googleapis.com/v0/b/zavor-fe238.firebasestorage.app/o/app%2FZavoR.apk?alt=media&token=90d69524-8611-4a3b-af6b-e96f00d935e3"
+                target="_blank" onclick="closeMobileNav();" class="btn btn-primary"
+                style="width: 100%; justify-content: center;">
                 <i class="fa-brands fa-android"></i> Descargar Zavor App (APK)
             </a>
         </div>
@@ -140,8 +159,8 @@
 
                     <!-- 4. Botones de Acción -->
                     <div class="hero-cta" style="margin-bottom: 1.5rem;">
-                        <a href="{% url 'landing:download_apk' %}" onclick="handleDownload(event)"
-                            class="btn btn-primary btn-large">
+                        <a href="https://firebasestorage.googleapis.com/v0/b/zavor-fe238.firebasestorage.app/o/app%2FZavoR.apk?alt=media&token=90d69524-8611-4a3b-af6b-e96f00d935e3"
+                            target="_blank" class="btn btn-primary btn-large">
                             <i class="fa-solid fa-download"></i> Descargar Zavor App (APK)
                         </a>
 
@@ -184,49 +203,9 @@
                 <div class="mockup-wrapper">
                     <div class="phone-mockup">
                         <div class="phone-notch"></div>
-                        <div class="phone-screen">
-
-                            <div class="app-header">
-                                <div
-                                    style="display: flex; align-items: center; gap: 0.4rem; font-weight: 800; font-size: 0.9rem; color: #0D1117;">
-                                    <i class="fa-solid fa-location-dot text-orange"></i> Villa El Salvador
-                                </div>
-                                <span
-                                    style="font-size: 0.7rem; background: var(--bg-orange-soft); color: var(--orange-primary); padding: 0.15rem 0.5rem; border-radius: 10px; font-weight: 800; border: 1px solid var(--border-orange);">EN
-                                    VIVO</span>
-                            </div>
-
-                            <div class="app-search">
-                                <i class="fa-solid fa-magnifying-glass text-orange"></i>
-                                <span>Buscar anticuchos, cebiche, pollería...</span>
-                            </div>
-
-                            <!-- Map Container -->
-                            <div class="app-map-view">
-                                <div class="map-grid"></div>
-
-                                <!-- Map Pins -->
-                                <div class="map-pin pin-1">
-                                    <i class="fa-solid fa-drumstick-bite text-orange"></i> Pollería El Gordo
-                                </div>
-                                <div class="map-pin pin-2">
-                                    <i class="fa-solid fa-fish text-orange"></i> Mi Rico Puerto
-                                </div>
-                                <div class="map-pin pin-3">
-                                    <i class="fa-solid fa-fire-burner text-orange"></i> Doña Jacinta
-                                </div>
-
-                                <!-- App Bottom Card Overlay -->
-                                <div class="app-card-bottom">
-                                    <div class="app-card-title">
-                                        <i class="fa-solid fa-star text-orange"></i> Pollería El Gordo (Sector 1)
-                                    </div>
-                                    <div class="app-card-sub">
-                                        A 350m de tu ubicación • Cierra 11:30 PM
-                                    </div>
-                                </div>
-                            </div>
-
+                        <div class="phone-screen" style="padding: 0; background: #000; overflow: hidden;">
+                            <img src="{% static 'images/app_screenshot.png' %}" alt="Zavor App Pantalla Real"
+                                style="width: 100%; height: 100%; object-fit: cover; object-position: top; display: block;">
                         </div>
                     </div>
                 </div>
@@ -312,7 +291,8 @@
                             nuestro distrito
                         </li>
                     </ul>
-                    <a href="{% url 'landing:download_apk' %}" onclick="handleDownload(event)" class="btn btn-primary">
+                    <a href="https://firebasestorage.googleapis.com/v0/b/zavor-fe238.firebasestorage.app/o/app%2FZavoR.apk?alt=media&token=90d69524-8611-4a3b-af6b-e96f00d935e3"
+                        target="_blank" class="btn btn-primary">
                         <i class="fa-brands fa-android"></i> Probar Zavor en VES
                     </a>
                 </div>
@@ -448,7 +428,7 @@
                     <!-- Circular Profile Photo Container MÁS GRANDE (145px) -->
                     <div class="founder-avatar-wrap"
                         style="width: 145px; height: 145px; margin: 0 auto 1.25rem; border-radius: 50%; overflow: hidden; border: 4px solid var(--orange-primary); box-shadow: 0 10px 30px var(--orange-glow-strong);">
-                        <img src="{% static 'images/CEO_Jostin.png' %}" alt="Co-Fundador Zavor"
+                        <img src="{% static 'images/CEO_Jostink.png' %}" alt="Co-Fundador Zavor"
                             style="width: 100%; height: 100%; object-fit: cover; display: block;">
                     </div>
 
@@ -483,7 +463,7 @@
                     </div>
                     <div
                         style="display: inline-block; background: var(--bg-orange-soft); color: var(--orange-primary); border: 1px solid var(--border-orange); padding: 0.25rem 0.8rem; border-radius: 20px; font-weight: 700; font-size: 0.8rem; margin-bottom: 1rem;">
-                        Co-Fundador & Dev Lead / Ingeniería
+                        Co-Fundador & Desarrollador / Ingeniería
                     </div>
 
                     <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.55; margin: 0;">
@@ -497,83 +477,126 @@
     </section>
 
     <!-- ODS & Social Impact Section (UN Agenda 2030) -->
-    <section id="ods" class="ods-section" style="padding: 4.5rem 1.5rem; background: #FFF9F5; color: var(--text-main); text-align: center; position: relative; border-top: 2px solid var(--border-orange); border-bottom: 2px solid var(--border-orange);">
+    <section id="ods" class="ods-section"
+        style="padding: 4.5rem 1.5rem; background: #FFF9F5; color: var(--text-main); text-align: center; position: relative; border-top: 2px solid var(--border-orange); border-bottom: 2px solid var(--border-orange);">
         <div class="container" style="max-width: 1100px; margin: 0 auto;">
-            
+
             <!-- Encabezado -->
-            <div style="display: inline-block; background: var(--bg-orange-soft); border: 1px solid var(--border-orange); color: var(--orange-primary); padding: 0.35rem 1.1rem; border-radius: 20px; font-weight: 800; font-size: 0.82rem; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.8rem;">
+            <div
+                style="display: inline-block; background: var(--bg-orange-soft); border: 1px solid var(--border-orange); color: var(--orange-primary); padding: 0.35rem 1.1rem; border-radius: 20px; font-weight: 800; font-size: 0.82rem; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.8rem;">
                 <i class="fa-solid fa-earth-americas" style="margin-right: 4px;"></i> Impacto Social & Sostenibilidad
             </div>
-            
-            <h2 style="font-family: 'Outfit', sans-serif; font-size: 2.3rem; font-weight: 800; color: var(--text-main); margin: 0.4rem 0 1rem;">
+
+            <h2
+                style="font-family: 'Outfit', sans-serif; font-size: 2.3rem; font-weight: 800; color: var(--text-main); margin: 0.4rem 0 1rem;">
                 Alineados con la Agenda 2030 de la ONU 🌍
             </h2>
-            
-            <p style="color: var(--text-muted); max-width: 680px; margin: 0 auto 3rem; font-size: 1rem; line-height: 1.65;">
-                En <strong>Zavor</strong> impulsamos la economía local de Villa El Salvador combinando innovación tecnológica con un propósito de desarrollo sostenible e inclusivo para nuestras MYPEs gastronómicas.
+
+            <p
+                style="color: var(--text-muted); max-width: 680px; margin: 0 auto 3rem; font-size: 1rem; line-height: 1.65;">
+                En <strong>Zavor</strong> impulsamos la economía local de Villa El Salvador combinando innovación
+                tecnológica con un propósito de desarrollo sostenible e inclusivo para nuestras MYPEs gastronómicas.
             </p>
 
             <!-- Grid de Tarjetas ODS -->
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.8rem;">
-                
+
                 <!-- Card ODS 8 -->
-                <div class="ods-card" style="background: #FFFFFF; border: 2px solid var(--border-orange); border-radius: 24px; padding: 2.2rem 1.8rem; text-align: left; transition: all 0.3s ease; position: relative; overflow: hidden; box-shadow: 0 12px 30px rgba(255, 127, 0, 0.08);">
-                    <div style="position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(90deg, #A21942, #E52B60);"></div>
+                <div class="ods-card"
+                    style="background: #FFFFFF; border: 2px solid var(--border-orange); border-radius: 24px; padding: 2.2rem 1.8rem; text-align: left; transition: all 0.3s ease; position: relative; overflow: hidden; box-shadow: 0 12px 30px rgba(255, 127, 0, 0.08);">
+                    <div
+                        style="position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(90deg, #A21942, #E52B60);">
+                    </div>
                     <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem;">
-                        <div style="background: #A21942; color: #FFFFFF; width: 50px; height: 50px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1.4rem; box-shadow: 0 6px 15px rgba(162, 25, 66, 0.3); flex-shrink: 0;">8</div>
+                        <div
+                            style="background: #A21942; color: #FFFFFF; width: 50px; height: 50px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1.4rem; box-shadow: 0 6px 15px rgba(162, 25, 66, 0.3); flex-shrink: 0;">
+                            8</div>
                         <div>
-                            <span style="font-size: 0.75rem; font-weight: 800; color: #A21942; text-transform: uppercase; letter-spacing: 0.5px;">ODS 8 | Economía Local</span>
-                            <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.2rem; font-weight: 800; color: var(--text-main); margin: 0.1rem 0 0;">Trabajo Decente y Crecimiento</h3>
+                            <span
+                                style="font-size: 0.75rem; font-weight: 800; color: #A21942; text-transform: uppercase; letter-spacing: 0.5px;">ODS
+                                8 | Economía Local</span>
+                            <h3
+                                style="font-family: 'Outfit', sans-serif; font-size: 1.2rem; font-weight: 800; color: var(--text-main); margin: 0.1rem 0 0;">
+                                Trabajo Decente y Crecimiento</h3>
                         </div>
                     </div>
-                    <p style="color: var(--text-muted); font-size: 0.93rem; line-height: 1.65; margin: 0; text-align: justify; text-justify: inter-word;">
-                        Digitalizamos y visibilizamos a los pequeños restaurantes y huariques familiares para incrementar sus ventas directas, protegiendo empleos locales y fomentando el emprendimiento sostenible.
+                    <p
+                        style="color: var(--text-muted); font-size: 0.93rem; line-height: 1.65; margin: 0; text-align: justify; text-justify: inter-word;">
+                        Digitalizamos y visibilizamos a los pequeños restaurantes y huariques familiares para
+                        incrementar sus ventas directas, protegiendo empleos locales y fomentando el emprendimiento
+                        sostenible.
                     </p>
                 </div>
 
                 <!-- Card ODS 9 -->
-                <div class="ods-card" style="background: #FFFFFF; border: 2px solid var(--border-orange); border-radius: 24px; padding: 2.2rem 1.8rem; text-align: left; transition: all 0.3s ease; position: relative; overflow: hidden; box-shadow: 0 12px 30px rgba(255, 127, 0, 0.08);">
-                    <div style="position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(90deg, #FD6925, #FF8A50);"></div>
+                <div class="ods-card"
+                    style="background: #FFFFFF; border: 2px solid var(--border-orange); border-radius: 24px; padding: 2.2rem 1.8rem; text-align: left; transition: all 0.3s ease; position: relative; overflow: hidden; box-shadow: 0 12px 30px rgba(255, 127, 0, 0.08);">
+                    <div
+                        style="position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(90deg, #FD6925, #FF8A50);">
+                    </div>
                     <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem;">
-                        <div style="background: #FD6925; color: #FFFFFF; width: 50px; height: 50px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1.4rem; box-shadow: 0 6px 15px rgba(253, 105, 37, 0.3); flex-shrink: 0;">9</div>
+                        <div
+                            style="background: #FD6925; color: #FFFFFF; width: 50px; height: 50px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1.4rem; box-shadow: 0 6px 15px rgba(253, 105, 37, 0.3); flex-shrink: 0;">
+                            9</div>
                         <div>
-                            <span style="font-size: 0.75rem; font-weight: 800; color: #FD6925; text-transform: uppercase; letter-spacing: 0.5px;">ODS 9 | Tecnología Accesible</span>
-                            <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.2rem; font-weight: 800; color: var(--text-main); margin: 0.1rem 0 0;">Industria, Innovación e Infraestructura</h3>
+                            <span
+                                style="font-size: 0.75rem; font-weight: 800; color: #FD6925; text-transform: uppercase; letter-spacing: 0.5px;">ODS
+                                9 | Tecnología Accesible</span>
+                            <h3
+                                style="font-family: 'Outfit', sans-serif; font-size: 1.2rem; font-weight: 800; color: var(--text-main); margin: 0.1rem 0 0;">
+                                Industria, Innovación e Infraestructura</h3>
                         </div>
                     </div>
-                    <p style="color: var(--text-muted); font-size: 0.93rem; line-height: 1.65; margin: 0; text-align: justify; text-justify: inter-word;">
-                        Democratizamos herramientas avanzadas de geolocalización e inteligencia de datos comercial para negocios emergentes de Villa El Salvador que habitualmente carecen de acceso tecnológico.
+                    <p
+                        style="color: var(--text-muted); font-size: 0.93rem; line-height: 1.65; margin: 0; text-align: justify; text-justify: inter-word;">
+                        Democratizamos herramientas avanzadas de geolocalización e inteligencia de datos comercial para
+                        negocios emergentes de Villa El Salvador que habitualmente carecen de acceso tecnológico.
                     </p>
                 </div>
 
                 <!-- Card ODS 11 -->
-                <div class="ods-card" style="background: #FFFFFF; border: 2px solid var(--border-orange); border-radius: 24px; padding: 2.2rem 1.8rem; text-align: left; transition: all 0.3s ease; position: relative; overflow: hidden; box-shadow: 0 12px 30px rgba(255, 127, 0, 0.08);">
-                    <div style="position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(90deg, #FD9D24, #FFC107);"></div>
+                <div class="ods-card"
+                    style="background: #FFFFFF; border: 2px solid var(--border-orange); border-radius: 24px; padding: 2.2rem 1.8rem; text-align: left; transition: all 0.3s ease; position: relative; overflow: hidden; box-shadow: 0 12px 30px rgba(255, 127, 0, 0.08);">
+                    <div
+                        style="position: absolute; top: 0; left: 0; right: 0; height: 5px; background: linear-gradient(90deg, #FD9D24, #FFC107);">
+                    </div>
                     <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem;">
-                        <div style="background: #FD9D24; color: #FFFFFF; width: 50px; height: 50px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1.4rem; box-shadow: 0 6px 15px rgba(253, 157, 36, 0.3); flex-shrink: 0;">11</div>
+                        <div
+                            style="background: #FD9D24; color: #FFFFFF; width: 50px; height: 50px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 1.4rem; box-shadow: 0 6px 15px rgba(253, 157, 36, 0.3); flex-shrink: 0;">
+                            11</div>
                         <div>
-                            <span style="font-size: 0.75rem; font-weight: 800; color: #FD9D24; text-transform: uppercase; letter-spacing: 0.5px;">ODS 11 | Comunidad Sostenible</span>
-                            <h3 style="font-family: 'Outfit', sans-serif; font-size: 1.2rem; font-weight: 800; color: var(--text-main); margin: 0.1rem 0 0;">Ciudades y Comunidades Sostenibles</h3>
+                            <span
+                                style="font-size: 0.75rem; font-weight: 800; color: #FD9D24; text-transform: uppercase; letter-spacing: 0.5px;">ODS
+                                11 | Comunidad Sostenible</span>
+                            <h3
+                                style="font-family: 'Outfit', sans-serif; font-size: 1.2rem; font-weight: 800; color: var(--text-main); margin: 0.1rem 0 0;">
+                                Ciudades y Comunidades Sostenibles</h3>
                         </div>
                     </div>
-                    <p style="color: var(--text-muted); font-size: 0.93rem; line-height: 1.65; margin: 0; text-align: justify; text-justify: inter-word;">
-                        Promovemos el comercio y consumo de proximidad en el distrito, fortaleciendo el tejido social de barrio y conectando a los vecinos directamente sin cobros de comisiones intermediarias.
+                    <p
+                        style="color: var(--text-muted); font-size: 0.93rem; line-height: 1.65; margin: 0; text-align: justify; text-justify: inter-word;">
+                        Promovemos el comercio y consumo de proximidad en el distrito, fortaleciendo el tejido social de
+                        barrio y conectando a los vecinos directamente sin cobros de comisiones intermediarias.
                     </p>
                 </div>
 
             </div>
 
             <!-- Respaldo Institucional y Concursos -->
-            <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-orange); display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1.5rem; font-size: 0.9rem; color: var(--text-main); font-weight: 600;">
-                <div style="display: flex; align-items: center; gap: 0.5rem; background: #FFFFFF; padding: 0.5rem 1rem; border-radius: 20px; border: 1px solid var(--border-orange);">
+            <div
+                style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-orange); display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1.5rem; font-size: 0.9rem; color: var(--text-main); font-weight: 600;">
+                <div
+                    style="display: flex; align-items: center; gap: 0.5rem; background: #FFFFFF; padding: 0.5rem 1rem; border-radius: 20px; border: 1px solid var(--border-orange);">
                     <i class="fa-solid fa-graduation-cap text-orange" style="font-size: 1.1rem;"></i>
                     <span>Iniciativa de Innovación Social UNTELS</span>
                 </div>
-                <div style="display: flex; align-items: center; gap: 0.5rem; background: #FFFFFF; padding: 0.5rem 1rem; border-radius: 20px; border: 1px solid var(--border-orange);">
+                <div
+                    style="display: flex; align-items: center; gap: 0.5rem; background: #FFFFFF; padding: 0.5rem 1rem; border-radius: 20px; border: 1px solid var(--border-orange);">
                     <i class="fa-solid fa-handshake text-orange" style="font-size: 1.1rem;"></i>
                     <span>0% Comisiones para Comerciantes Locales</span>
                 </div>
-                <div style="display: flex; align-items: center; gap: 0.5rem; background: #FFFFFF; padding: 0.5rem 1rem; border-radius: 20px; border: 1px solid var(--border-orange);">
+                <div
+                    style="display: flex; align-items: center; gap: 0.5rem; background: #FFFFFF; padding: 0.5rem 1rem; border-radius: 20px; border: 1px solid var(--border-orange);">
                     <i class="fa-solid fa-mobile-screen-button text-orange" style="font-size: 1.1rem;"></i>
                     <span>Acceso Gratuito para Vecinos y Comensales</span>
                 </div>
@@ -622,8 +645,8 @@
                 Instala la aplicación Zavor ahora mismo directamente en tu celular Android. ¡Empieza a descubrir
                 huariques hoy!
             </p>
-            <a href="{% url 'landing:download_apk' %}" onclick="handleDownload(event)"
-                class="btn btn-primary btn-large">
+            <a href="https://firebasestorage.googleapis.com/v0/b/zavor-fe238.firebasestorage.app/o/app%2FZavoR.apk?alt=media&token=90d69524-8611-4a3b-af6b-e96f00d935e3"
+                target="_blank" class="btn btn-primary btn-large">
                 <i class="fa-brands fa-android"></i> Descargar Zavor (APK) v1.0
             </a>
         </section>
@@ -725,7 +748,8 @@
                     <strong style="color: var(--orange-primary);">4. Contacto</strong>
                     <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 0.2rem;">Para cualquier consulta
                         sobre privacidad puedes comunicarte con el equipo de soporte escribiendo a
-                        <code>alfaromendozajoseluis3@gmail.com</code>.</p>
+                        <code>alfaromendozajoseluis3@gmail.com</code>.
+                    </p>
                 </div>
             </div>
 
@@ -867,7 +891,7 @@
     <!-- Interactive Scripts -->
     <script>
         function handleDownload(event) {
-            openModal('downloadModal');
+            // Permite que el enlace navegue directamente a la descarga del APK
         }
 
         function openModal(modalId) {
@@ -916,6 +940,8 @@
                 event.target.classList.remove('active');
             }
         }
+
+
     </script>
 </body>
 
