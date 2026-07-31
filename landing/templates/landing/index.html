@@ -186,15 +186,15 @@
                     <div class="hero-stats" style="margin-top: 1.5rem;">
                         <div>
                             <div class="stat-number">{{ stats.huariques_count }}</div>
-                            <div class="stat-label">Huariques Mapeados</div>
+                            <div class="stat-label">Restaurantes en el mapa</div>
                         </div>
                         <div>
                             <div class="stat-number">{{ stats.active_neighbors }}</div>
-                            <div class="stat-label">Vecinos Activos</div>
+                            <div class="stat-label">Comisión para negocios</div>
                         </div>
                         <div>
                             <div class="stat-number">{{ stats.rating_average }}</div>
-                            <div class="stat-label">Calificación Comunidad</div>
+                            <div class="stat-label">Gratis para comensales</div>
                         </div>
                     </div>
                 </div>
@@ -307,35 +307,26 @@
     <section id="huariques" class="places">
         <div class="container">
             <div class="section-header">
-                <div class="section-subtitle">Descubre el Sabor Local</div>
-                <h2 class="section-title">Algunos huariques destacados en Zavor</h2>
+                <div class="section-subtitle">Huariques Destacados</div>
+                <h2 class="section-title">Descubre el sabor escondido de tu sector</h2>
+                <p style="color: var(--text-muted); font-size: 1.1rem; margin-top: 1rem; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                    Desde pollerías tradicionales hasta cebicherías de barrio, Zavor conecta contigo a los huariques que tu vecino ya conoce pero que capaz tú no habías descubierto todavía.
+                </p>
             </div>
 
-            <div class="places-grid">
-                {% for place in featured_places %}
-                <div class="place-card">
-                    <div class="place-img-wrap">
-                        <span class="place-badge">{{ place.badge }}</span>
-                        {% if place.image %}
-                        <img src="{% static place.image %}" alt="{{ place.name }}">
-                        {% else %}
-                        <img src="{% static 'images/hero_food.png' %}" alt="{{ place.name }}">
-                        {% endif %}
-                    </div>
-                    <div class="place-content">
-                        <div class="place-header">
-                            <h3 class="place-name">{{ place.name }}</h3>
-                            <span class="place-rating">
-                                <i class="fa-solid fa-star"></i> {{ place.rating }}
-                            </span>
-                        </div>
-                        <div class="place-address">
-                            <i class="fa-solid fa-location-dot text-orange"></i> {{ place.location }}
-                        </div>
-                        <p class="place-desc">{{ place.desc }}</p>
-                    </div>
-                </div>
-                {% endfor %}
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-bottom: 2rem;">
+                <span style="background: var(--surface-card); padding: 0.75rem 1.5rem; border-radius: 30px; border: 1px solid var(--border-color); font-weight: 600; color: var(--text-main); box-shadow: 0 4px 10px rgba(0,0,0,0.03);">🍗 Pollerías</span>
+                <span style="background: var(--surface-card); padding: 0.75rem 1.5rem; border-radius: 30px; border: 1px solid var(--border-color); font-weight: 600; color: var(--text-main); box-shadow: 0 4px 10px rgba(0,0,0,0.03);">🐟 Cebicherías</span>
+                <span style="background: var(--surface-card); padding: 0.75rem 1.5rem; border-radius: 30px; border: 1px solid var(--border-color); font-weight: 600; color: var(--text-main); box-shadow: 0 4px 10px rgba(0,0,0,0.03);">🍚 Chifas</span>
+                <span style="background: var(--surface-card); padding: 0.75rem 1.5rem; border-radius: 30px; border: 1px solid var(--border-color); font-weight: 600; color: var(--text-main); box-shadow: 0 4px 10px rgba(0,0,0,0.03);">🍢 Anticuchadas</span>
+                <span style="background: var(--surface-card); padding: 0.75rem 1.5rem; border-radius: 30px; border: 1px solid var(--border-color); font-weight: 600; color: var(--text-main); box-shadow: 0 4px 10px rgba(0,0,0,0.03);">🍰 Postres</span>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <p style="font-weight: 500; font-size: 1.1rem; color: var(--text-main); margin-bottom: 1.5rem;">Descarga la app y explora el mapa completo de Villa El Salvador.</p>
+                <a href="{% url 'download_apk' %}" class="btn btn-primary" style="padding: 1rem 2rem; font-size: 1.1rem;">
+                    <i class="fa-brands fa-android"></i> Descargar Zavor
+                </a>
             </div>
         </div>
     </section>
@@ -610,29 +601,16 @@
         <div class="container">
             <div class="section-header">
                 <div class="section-subtitle">Comunidad Vecinal</div>
-                <h2 class="section-title">Lo que dicen los vecinos de Villa El Salvador</h2>
+                <h2 class="section-title">Sé de los primeros en dejar tu huella en Zavor</h2>
+                <p style="color: var(--text-muted); font-size: 1.1rem; margin-top: 1rem; max-width: 600px; margin-left: auto; margin-right: auto; line-height: 1.6;">
+                    Estamos construyendo la comunidad gastronómica de Villa El Salvador, un vecino a la vez. Descarga la app, visita tu huarique favorito, y sé de los primeros en dejar tu reseña — sin opiniones compradas, sin locales que pagaron por aparecer primero.
+                </p>
             </div>
 
-            <div class="reviews-grid">
-                {% for rev in reviews %}
-                <div class="review-card">
-                    <div class="review-stars">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="review-text">"{{ rev.comment }}"</p>
-                    <div class="review-author">
-                        <div class="avatar">{{ rev.author|slice:":1" }}</div>
-                        <div>
-                            <div class="author-name">{{ rev.author }}</div>
-                            <div class="author-role">{{ rev.role }}</div>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="{% url 'download_apk' %}" class="btn btn-primary" style="padding: 1rem 2rem; font-size: 1.1rem;">
+                    Descargar Zavor y ser parte de esto
+                </a>
             </div>
         </div>
     </section>
@@ -726,8 +704,9 @@
                 <div>
                     <strong style="color: var(--orange-primary);">1. Recopilación Mínima</strong>
                     <p style="color: var(--text-muted); font-size: 0.88rem; margin-top: 0.2rem;">Zavor respeta tu
-                        privacidad al máximo. No requerimos registro de cuenta obligatoria ni recabamos contraseñas ni
-                        datos sensibles para navegar o consultar los huariques de VES.</p>
+                        privacidad. Puedes navegar libremente sin cuenta, pero para guardar favoritos o dejar reseñas, 
+                        solicitamos iniciar sesión con Google (correo y nombre público). No recabamos contraseñas ni
+                        datos sensibles adicionales.</p>
                 </div>
 
                 <div>
