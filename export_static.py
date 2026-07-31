@@ -15,8 +15,8 @@ def export_homepage():
         
         # 1. Reemplazar rutas estáticas (asumiendo que {% static ... %} renderizó algo como "/static/...")
         # Buscamos 'href="/static/' y 'src="/static/'
-        html = html.replace('href="/static/', 'href="static/')
-        html = html.replace('src="/static/', 'src="static/')
+        html = html.replace('href="/static/', 'href="./static/')
+        html = html.replace('src="/static/', 'src="./static/')
         
         # 2. Reemplazar enlaces a la vista de descarga si los hay, aunque el html ya renderizado tendrá href="/descargar/"
         # O podemos buscar "href=\"/descargar/\"" y reemplazar con la URL de Firebase
