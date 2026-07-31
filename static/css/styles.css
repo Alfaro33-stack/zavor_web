@@ -8,73 +8,6 @@
    ========================================================================== */
 
 :root {
-  --bg-dark: #0B0E14;
-  --bg-header: rgba(11, 14, 20, 0.92);
-  --bg-card: #161B22;
-  --bg-surface: #1F242D;
-  --bg-surface-hover: #2A303C;
-  --bg-orange-soft: rgba(255, 127, 0, 0.14);
-  --bg-orange-light: rgba(255, 127, 0, 0.24);
-
-  --border-color: #2D333B;
-  --border-subtle: #22272E;
-  --border-orange: rgba(255, 127, 0, 0.38);
-
-  --orange-primary: #FF7F00;
-  --orange-hover: #FF9426;
-  --orange-light: #FFA94D;
-  --orange-glow: rgba(255, 127, 0, 0.25);
-  --orange-glow-strong: rgba(255, 127, 0, 0.45);
-
-  --text-main: #F0F6FC;
-  --text-muted: #9198A1;
-  --text-subtle: #6E7681;
-
-  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.35);
-  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.45);
-  --shadow-lg: 0 20px 45px rgba(255, 127, 0, 0.18);
-  --shadow-glow: 0 0 35px rgba(255, 127, 0, 0.3);
-
-  --radius-sm: 8px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
-  --radius-full: 9999px;
-
-  --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* Modo Oscuro Forzado o Explicito */
-[data-theme="dark"] {
-  --bg-dark: #0B0E14;
-  --bg-header: rgba(11, 14, 20, 0.92);
-  --bg-card: #161B22;
-  --bg-surface: #1F242D;
-  --bg-surface-hover: #2A303C;
-  --bg-orange-soft: rgba(255, 127, 0, 0.14);
-  --bg-orange-light: rgba(255, 127, 0, 0.24);
-
-  --border-color: #2D333B;
-  --border-subtle: #22272E;
-  --border-orange: rgba(255, 127, 0, 0.38);
-
-  --orange-primary: #FF7F00;
-  --orange-hover: #FF9426;
-  --orange-light: #FFA94D;
-  --orange-glow: rgba(255, 127, 0, 0.25);
-  --orange-glow-strong: rgba(255, 127, 0, 0.45);
-
-  --text-main: #F0F6FC;
-  --text-muted: #9198A1;
-  --text-subtle: #6E7681;
-
-  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.35);
-  --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.45);
-  --shadow-lg: 0 20px 45px rgba(255, 127, 0, 0.18);
-  --shadow-glow: 0 0 35px rgba(255, 127, 0, 0.3);
-}
-
-/* Modo Claro Opcional / Light Theme */
-[data-theme="light"] {
   --bg-dark: #FFFFFF;
   --bg-header: rgba(255, 255, 255, 0.95);
   --bg-card: #FFFFFF;
@@ -101,6 +34,13 @@
   --shadow-md: 0 10px 30px rgba(13, 17, 23, 0.07);
   --shadow-lg: 0 20px 45px rgba(255, 127, 0, 0.12);
   --shadow-glow: 0 0 35px rgba(255, 127, 0, 0.25);
+
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+
+  --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Reset & Base */
