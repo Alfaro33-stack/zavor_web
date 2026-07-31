@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es-PE">
 
@@ -21,11 +22,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="static/images/logo_transparent.png">
+    <link rel="icon" type="image/png" href="{% static 'images/logo.png' %}">
 
-    <!-- Custom CSS (v31.0 con Solo Modo Claro activado) -->
-    <link rel="stylesheet" href="static/css/styles.css?v=31.0">
+    <!-- Custom CSS (v30.0 con Logo Original Restaurado) -->
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}?v=30.0">
 
+    <!-- Anti-FOUC Theme Script (Predeterminado: Modo Oscuro) -->
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('zavor_theme');
+            if (savedTheme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+        })();
+    </script>
 </head>
 
 <body>
@@ -39,7 +51,7 @@
         <div class="container nav-content">
             <a href="#" class="logo">
                 <div class="logo-icon">
-                    <img src="static/images/logo_transparent.png" alt="Zavor Logo"
+                    <img src="{% static 'images/logo1.png' %}" alt="Zavor Logo"
                         style="max-height: 44px; width: auto; object-fit: contain;">
                 </div>
                 <span
@@ -79,7 +91,7 @@
         <div class="mobile-drawer-header">
             <div class="logo">
                 <div class="logo-icon">
-                    <img src="static/images/logo_transparent.png" alt="Zavor Logo"
+                    <img src="{% static 'images/logo.png' %}" alt="Zavor Logo"
                         style="max-height: 36px; width: auto; object-fit: contain;">
                 </div>
                 <span
@@ -135,7 +147,7 @@
                     <!-- 2. Imagen Principal (fondo.jpg) -->
                     <div class="hero-ves-card"
                         style="margin-bottom: 2rem; position: relative; border-radius: 20px; overflow: hidden; box-shadow: 0 18px 40px rgba(255, 127, 0, 0.2); border: 2.5px solid var(--border-orange);">
-                        <img src="static/images/fondo.jpg" alt="Villa El Salvador Gastronomía"
+                        <img src="{% static 'images/fondo.jpg' %}" alt="Villa El Salvador Gastronomía"
                             style="width: 100%; height: 480px; object-fit: cover; display: block;">
                     </div>
 
@@ -173,15 +185,15 @@
                     <!-- 6. Contador de Estadísticas -->
                     <div class="hero-stats" style="margin-top: 1.5rem;">
                         <div>
-                            <div class="stat-number">120+</div>
+                            <div class="stat-number">{{ stats.huariques_count }}</div>
                             <div class="stat-label">Huariques Mapeados</div>
                         </div>
                         <div>
-                            <div class="stat-number">4.8k</div>
+                            <div class="stat-number">{{ stats.active_neighbors }}</div>
                             <div class="stat-label">Vecinos Activos</div>
                         </div>
                         <div>
-                            <div class="stat-number">4.9/5</div>
+                            <div class="stat-number">{{ stats.rating_average }}</div>
                             <div class="stat-label">Calificación Comunidad</div>
                         </div>
                     </div>
@@ -192,7 +204,7 @@
                     <div class="phone-mockup">
                         <div class="phone-notch"></div>
                         <div class="phone-screen" style="padding: 0; background: #000; overflow: hidden;">
-                            <img src="static/images/app_screenshot.png" alt="Zavor App Pantalla Real"
+                            <img src="{% static 'images/app_screenshot.png' %}" alt="Zavor App Pantalla Real"
                                 style="width: 100%; height: 100%; object-fit: cover; object-position: top; display: block;">
                         </div>
                     </div>
@@ -285,7 +297,7 @@
                     </a>
                 </div>
                 <div class="ves-img-container">
-                    <img src="static/images/hero_food.png" alt="Gastronomía Peruana Villa El Salvador">
+                    <img src="{% static 'images/hero_food.png' %}" alt="Gastronomía Peruana Villa El Salvador">
                 </div>
             </div>
         </div>
@@ -300,70 +312,30 @@
             </div>
 
             <div class="places-grid">
-
+                {% for place in featured_places %}
                 <div class="place-card">
                     <div class="place-img-wrap">
-                        <span class="place-badge">Top Vecino</span>
-
-                        <img src="static/images/pollo_brasa.png" alt="Pollería El Gordo de la Central">
-
+                        <span class="place-badge">{{ place.badge }}</span>
+                        {% if place.image %}
+                        <img src="{% static place.image %}" alt="{{ place.name }}">
+                        {% else %}
+                        <img src="{% static 'images/hero_food.png' %}" alt="{{ place.name }}">
+                        {% endif %}
                     </div>
                     <div class="place-content">
                         <div class="place-header">
-                            <h3 class="place-name">Pollería El Gordo de la Central</h3>
+                            <h3 class="place-name">{{ place.name }}</h3>
                             <span class="place-rating">
-                                <i class="fa-solid fa-star"></i> 4.9 ★
+                                <i class="fa-solid fa-star"></i> {{ place.rating }}
                             </span>
                         </div>
                         <div class="place-address">
-                            <i class="fa-solid fa-location-dot text-orange"></i> Av. Central Mz. B Lt. 14, VES
+                            <i class="fa-solid fa-location-dot text-orange"></i> {{ place.location }}
                         </div>
-                        <p class="place-desc">El verdadero pollo al grano con ají de huacatay artesanal insuperable.</p>
+                        <p class="place-desc">{{ place.desc }}</p>
                     </div>
                 </div>
-
-                <div class="place-card">
-                    <div class="place-img-wrap">
-                        <span class="place-badge">Recomendado</span>
-
-                        <img src="static/images/ceviche.png" alt="Cebichería Mi Rico Puerto">
-
-                    </div>
-                    <div class="place-content">
-                        <div class="place-header">
-                            <h3 class="place-name">Cebichería Mi Rico Puerto</h3>
-                            <span class="place-rating">
-                                <i class="fa-solid fa-star"></i> 4.8 ★
-                            </span>
-                        </div>
-                        <div class="place-address">
-                            <i class="fa-solid fa-location-dot text-orange"></i> Sector 2 Grupo 15, Villa El Salvador
-                        </div>
-                        <p class="place-desc">Cebiche de pesca del día con chicharrón de pota súper crocante.</p>
-                    </div>
-                </div>
-
-                <div class="place-card">
-                    <div class="place-img-wrap">
-                        <span class="place-badge">Tradición</span>
-
-                        <img src="static/images/anticuchos.png" alt="Anticuchos Doña Jacinta">
-
-                    </div>
-                    <div class="place-content">
-                        <div class="place-header">
-                            <h3 class="place-name">Anticuchos Doña Jacinta</h3>
-                            <span class="place-rating">
-                                <i class="fa-solid fa-star"></i> 5.0 ★
-                            </span>
-                        </div>
-                        <div class="place-address">
-                            <i class="fa-solid fa-location-dot text-orange"></i> Av. Revolución cruzando con Av. Lima
-                        </div>
-                        <p class="place-desc">Corazón tierno sazonado con receta secreta de más de 25 años.</p>
-                    </div>
-                </div>
-
+                {% endfor %}
             </div>
         </div>
     </section>
@@ -398,7 +370,7 @@
                     <!-- Circular Profile Photo Container MÁS GRANDE (145px) -->
                     <div class="founder-avatar-wrap"
                         style="width: 145px; height: 145px; margin: 0 auto 1.25rem; border-radius: 50%; overflow: hidden; border: 4px solid var(--orange-primary); box-shadow: 0 10px 30px var(--orange-glow-strong);">
-                        <img src="static/images/CEO_Alfaro.png" alt="José Luis Alfaro"
+                        <img src="{% static 'images/CEO_Alfaro.png' %}" alt="José Luis Alfaro"
                             style="width: 100%; height: 100%; object-fit: cover; display: block;">
                     </div>
 
@@ -456,7 +428,7 @@
                     <!-- Circular Profile Photo Container MÁS GRANDE (145px) -->
                     <div class="founder-avatar-wrap"
                         style="width: 145px; height: 145px; margin: 0 auto 1.25rem; border-radius: 50%; overflow: hidden; border: 4px solid var(--orange-primary); box-shadow: 0 10px 30px var(--orange-glow-strong);">
-                        <img src="static/images/CEO_Jostink.png" alt="Co-Fundador Zavor"
+                        <img src="{% static 'images/CEO_Jostink.png' %}" alt="Co-Fundador Zavor"
                             style="width: 100%; height: 100%; object-fit: cover; display: block;">
                     </div>
 
@@ -642,7 +614,7 @@
             </div>
 
             <div class="reviews-grid">
-
+                {% for rev in reviews %}
                 <div class="review-card">
                     <div class="review-stars">
                         <i class="fa-solid fa-star"></i>
@@ -651,55 +623,16 @@
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
                     </div>
-                    <p class="review-text">"¡Al fin una app que conoce los verdaderos huariques de VES! Encontré una
-                        cebichería oculta a dos cuadras de mi casa que no aparecía en Google Maps."</p>
+                    <p class="review-text">"{{ rev.comment }}"</p>
                     <div class="review-author">
-                        <div class="avatar">C</div>
+                        <div class="avatar">{{ rev.author|slice:":1" }}</div>
                         <div>
-                            <div class="author-name">Carlos Mendoza</div>
-                            <div class="author-role">Vecino de Sector 3</div>
+                            <div class="author-name">{{ rev.author }}</div>
+                            <div class="author-role">{{ rev.role }}</div>
                         </div>
                     </div>
                 </div>
-
-                <div class="review-card">
-                    <div class="review-stars">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="review-text">"Zavor nos ayudó a llenar las mesas los fines de semana sin pagar comisiones
-                        absurdas de delivery. Los clientes llegan directo por el mapa."</p>
-                    <div class="review-author">
-                        <div class="avatar">R</div>
-                        <div>
-                            <div class="author-name">Rosa Huamán</div>
-                            <div class="author-role">Dueña de &quot;El Sabor del Parque&quot;</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="review-card">
-                    <div class="review-stars">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="review-text">"La app corre súper fluida y descargar el APK directamente desde aquí fue
-                        facilísimo. Muy recomendada para los foodies del cono sur."</p>
-                    <div class="review-author">
-                        <div class="avatar">J</div>
-                        <div>
-                            <div class="author-name">Javier Ruiz</div>
-                            <div class="author-role">Gastrónomo Urbano</div>
-                        </div>
-                    </div>
-                </div>
-
+                {% endfor %}
             </div>
         </div>
     </section>
@@ -901,7 +834,7 @@
                 <div>
                     <a href="#" class="logo" style="margin-bottom: 1rem; color: white;">
                         <div class="logo-icon" style="width: 36px; height: 36px;">
-                            <img src="static/images/logo_transparent.png" alt="Zavor Logo"
+                            <img src="{% static 'images/logo.png' %}" alt="Zavor Logo"
                                 style="width: 100%; height: 100%; object-fit: contain;">
                         </div>
                         <span style="color: white; font-family: 'Outfit', sans-serif; font-weight: 800;">ZavoR</span>
@@ -940,7 +873,7 @@
                 <div>
                     <h4 style="color: white; margin-bottom: 1rem;">Síguenos</h4>
                     <div style="display: flex; gap: 1rem; font-size: 1.2rem;">
-                        <a href="https://www.facebook.com/profile.php?id=61592913501711" target="_blank"
+                        <a href="https://www.facebook.com/profile.php?id=61585653447183" target="_blank"
                             rel="noopener noreferrer" class="text-orange"><i class="fa-brands fa-facebook"></i></a>
                         <a href="https://www.instagram.com/alfaromendozajoseluis3/" target="_blank"
                             rel="noopener noreferrer" class="text-orange"><i class="fa-brands fa-instagram"></i></a>
