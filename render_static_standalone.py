@@ -101,7 +101,7 @@ def render_standalone():
     html = re.sub(r'\{%\s*static\s+([a-zA-Z0-9_.]+)\s*%\}', r'static/{{\1}}', html)
     
     # 3. Handle urls. {% url 'landing:download_apk' %} -> firebase url
-    firebase_url = "https://firebasestorage.googleapis.com/v0/b/zavor-fe238.firebasestorage.app/o/app%2FZavoR.apk?alt=media&token=90d69524-8611-4a3b-af6b-e96f00d935e3"
+    firebase_url = "https://firebasestorage.googleapis.com/v0/b/zavor-fe238.firebasestorage.app/o/app%2FZavoR.apk?alt=media&token=0eb9a994-aa87-436d-93e8-aa8019c175c8"
     html = re.sub(r'\{%\s*url\s+[\'"]landing:download_apk[\'"]\s*%\}', firebase_url, html)
     
     # 4. Any other urls -> #

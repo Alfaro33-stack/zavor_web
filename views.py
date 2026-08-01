@@ -23,5 +23,5 @@ def download_apk(request):
     """
     Vista encargada de redireccionar a la descarga del APK directamente desde Firebase Storage.
     """
-    firebase_apk_url = "https://firebasestorage.googleapis.com/v0/b/zavor-fe238.firebasestorage.app/o/app%2FZavoR.apk?alt=media&token=90d69524-8611-4a3b-af6b-e96f00d935e3"
+    firebase_apk_url = "https://firebasestorage.googleapis.com/v0/b/zavor-fe238.firebasestorage.app/o/app%2FZavoR.apk?alt=media&token=0eb9a994-aa87-436d-93e8-aa8019c175c8"
     return redirect(firebase_apk_url)

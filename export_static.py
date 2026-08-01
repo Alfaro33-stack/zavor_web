@@ -20,7 +20,7 @@ def export_homepage():
         
         # 2. Reemplazar enlaces a la vista de descarga si los hay, aunque el html ya renderizado tendrá href="/descargar/"
         # O podemos buscar "href=\"/descargar/\"" y reemplazar con la URL de Firebase
-        firebase_url = "https://firebasestorage.googleapis.com/v0/b/zavor-fe238.firebasestorage.app/o/app%2FZavoR.apk?alt=media&token=90d69524-8611-4a3b-af6b-e96f00d935e3"
+        firebase_url = "https://firebasestorage.googleapis.com/v0/b/zavor-fe238.firebasestorage.app/o/app%2FZavoR.apk?alt=media&token=0eb9a994-aa87-436d-93e8-aa8019c175c8"
         html = html.replace('href="/descargar/"', f'href="{firebase_url}"')
         html = html.replace("href='/descargar/'", f"href='{firebase_url}'")
         
