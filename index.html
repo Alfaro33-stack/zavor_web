@@ -226,6 +226,180 @@
       ]
     }
     </script>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+
+    <!-- Estilos de Secciones Corporativas y Pitch Deck (Agregadas al final) -->
+    <style>
+        .startup-section {
+            padding: 5rem 0;
+            position: relative;
+        }
+        .startup-section-light {
+            background-color: #F8F9FA;
+            border-top: 1px solid #E5E7EB;
+            border-bottom: 1px solid #E5E7EB;
+        }
+        .startup-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: #FFF4ED;
+            color: #FF6B00;
+            border: 1px solid rgba(255, 107, 0, 0.2);
+            padding: 0.35rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-bottom: 0.8rem;
+        }
+        .startup-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.8rem;
+            margin-top: 2.5rem;
+        }
+        .startup-card {
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            border-radius: 18px;
+            padding: 2.2rem 1.8rem;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+        .startup-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 107, 0, 0.4);
+            box-shadow: 0 12px 28px rgba(255, 107, 0, 0.08);
+        }
+        .startup-icon-box {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            background-color: #FFF4ED;
+            color: #FF6B00;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin-bottom: 1.3rem;
+        }
+        .startup-metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin: 2.5rem 0 3.5rem;
+        }
+        .startup-metric-box {
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            border-radius: 14px;
+            padding: 1.8rem 1.2rem;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .startup-metric-val {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #FF6B00;
+            line-height: 1.1;
+            margin-bottom: 0.4rem;
+        }
+        .startup-pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .startup-pricing-card {
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        .startup-pricing-card.featured {
+            border: 2px solid #FF6B00;
+            box-shadow: 0 12px 32px rgba(255, 107, 0, 0.12);
+        }
+        .startup-onboarding-wrap {
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            border-radius: 24px;
+            padding: 3.2rem 2.4rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            max-width: 980px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+        .startup-onboarding-wrap::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #FF6B00, #FFA255);
+        }
+        .startup-onboarding-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 2.5rem;
+            align-items: center;
+        }
+        .startup-btn-whatsapp {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            background-color: #25D366;
+            color: #FFFFFF !important;
+            font-size: 1.08rem;
+            font-weight: 700;
+            padding: 1.1rem 2.2rem;
+            border-radius: 9999px;
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+        .startup-btn-whatsapp:hover {
+            background-color: #20BD5A;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(37, 211, 102, 0.45);
+        }
+        .startup-hub-iframe-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 2rem auto 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border: 1px solid #E5E7EB;
+            background: #FFFFFF;
+        }
+        .startup-hub-iframe-container iframe {
+            width: 100%;
+            height: 380px;
+            border: 0;
+            display: block;
+        }
+        @media (max-width: 992px) {
+            .startup-grid-3 { grid-template-columns: 1fr; }
+            .startup-metrics-grid { grid-template-columns: repeat(2, 1fr); }
+            .startup-onboarding-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 600px) {
+            .startup-metrics-grid { grid-template-columns: 1fr; }
+            .startup-pricing-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+
 </head>
 
 <body>
@@ -804,6 +978,260 @@
     </div>
 
     <!-- Modal for APK Installation Guide -->
+    
+    <!-- ================================================================= -->
+    <!-- SECCIONES CORPORATIVAS Y PITCH DECK PARA INVERSIONISTAS & MYPEs   -->
+    <!-- (Agregadas al final de la página preservando todo el diseño web)  -->
+    <!-- ================================================================= -->
+
+    <!-- SECCIÓN: EL PROBLEMA Y LA SOLUCIÓN -->
+    <section id="problema-solucion" class="startup-section startup-section-light">
+        <div class="container">
+            <div class="section-header" style="text-align: center; max-width: 720px; margin: 0 auto 1.5rem;">
+                <div class="startup-badge">
+                    <i class="ph ph-scales"></i> Diagnóstico de Mercado
+                </div>
+                <h2 class="section-title">De la Invisibilidad Callejera a la Vitrina Digital</h2>
+                <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.6;">
+                    Transformamos la invisibilidad digital de los negocios de barrio (incluyendo carretillas y comercio ambulatorio) en una vitrina hiperlocal estructurada para maximizar sus ventas sin comisiones abusivas.
+                </p>
+            </div>
+
+            <div class="startup-grid-3">
+                <!-- Columna 1 -->
+                <div class="startup-card">
+                    <div class="startup-icon-box">
+                        <i class="ph ph-storefront"></i>
+                    </div>
+                    <span style="font-size: 0.75rem; font-weight: 700; color: #6B7280; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.35rem;">El Problema #1</span>
+                    <h3 style="font-size: 1.25rem; font-weight: 700; color: #111827; margin-bottom: 0.8rem;">Invisibilidad Digital en Barrios</h3>
+                    <p style="font-size: 0.93rem; color: #4B5563; line-height: 1.6; margin-bottom: 1.2rem;">
+                        Más del 85% de huariques, carretillas y puestos de comida en Villa El Salvador carecen de presencia en internet. Pese a tener un sazón extraordinario, dependen únicamente del transeúnte local y pierden cientos de comensales diarios.
+                    </p>
+                    <div style="margin-top: auto; background: #F8F9FA; border-left: 3px solid #FF6B00; padding: 0.75rem 0.9rem; border-radius: 0 8px 8px 0; font-size: 0.875rem; font-weight: 600; color: #111827;">
+                        Vitrina digital hiperlocal y perfil geolocalizado en el mapa distrital de ZavoR.
+                    </div>
+                </div>
+
+                <!-- Columna 2 -->
+                <div class="startup-card">
+                    <div class="startup-icon-box">
+                        <i class="ph ph-percentage"></i>
+                    </div>
+                    <span style="font-size: 0.75rem; font-weight: 700; color: #6B7280; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.35rem;">El Problema #2</span>
+                    <h3 style="font-size: 1.25rem; font-weight: 700; color: #111827; margin-bottom: 0.8rem;">Comisiones Asfixiantes (25% - 32%)</h3>
+                    <p style="font-size: 0.93rem; color: #4B5563; line-height: 1.6; margin-bottom: 1.2rem;">
+                        Las aplicaciones globales de delivery imponen tarifas exorbitantes que destruyen el margen de ganancia de las pequeñas microempresas populares y dejan fuera al carretillero o huarique tradicional.
+                    </p>
+                    <div style="margin-top: auto; background: #F8F9FA; border-left: 3px solid #FF6B00; padding: 0.75rem 0.9rem; border-radius: 0 8px 8px 0; font-size: 0.875rem; font-weight: 600; color: #111827;">
+                        Modelo 0% comisiones. El ingreso por cada venta queda 100% íntegro para el comerciante.
+                    </div>
+                </div>
+
+                <!-- Columna 3 -->
+                <div class="startup-card">
+                    <div class="startup-icon-box">
+                        <i class="ph ph-device-mobile-camera"></i>
+                    </div>
+                    <span style="font-size: 0.75rem; font-weight: 700; color: #6B7280; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.35rem;">El Problema #3</span>
+                    <h3 style="font-size: 1.25rem; font-weight: 700; color: #111827; margin-bottom: 0.8rem;">Barrera Tecnológica y de Tiempo</h3>
+                    <p style="font-size: 0.93rem; color: #4B5563; line-height: 1.6; margin-bottom: 1.2rem;">
+                        Los maestros de la carretilla y dueños de huariques dedican su tiempo completo al fogón y la atención al cliente. No disponen de tiempo ni capacitación para lidiar con softwares difíciles.
+                    </p>
+                    <div style="margin-top: auto; background: #F8F9FA; border-left: 3px solid #FF6B00; padding: 0.75rem 0.9rem; border-radius: 0 8px 8px 0; font-size: 0.875rem; font-weight: 600; color: #111827;">
+                        Afiliación presencial en su propio local y canal de pedidos directo por WhatsApp.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: TRACCIÓN, MODELO DE NEGOCIO Y PROYECCIONES -->
+    <section id="traccion-modelo" class="startup-section" style="background: #FFFFFF;">
+        <div class="container">
+            <div class="section-header" style="text-align: center; max-width: 760px; margin: 0 auto 1.5rem;">
+                <div class="startup-badge">
+                    <i class="ph ph-chart-line-up"></i> Pitch Deck & Inversionistas
+                </div>
+                <h2 class="section-title">Tracción, Modelo de Negocio y Proyecciones</h2>
+                <p style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.6;">
+                    Una propuesta con alto potencial de retorno e impacto social positivo, postulante a fondos de innovación (ProInnóvate, Startup Perú) y diseñada para liderar el ecosistema de Lima Sur.
+                </p>
+            </div>
+
+            <!-- Métricas Proyectadas Clave -->
+            <div class="startup-metrics-grid">
+                <div class="startup-metric-box">
+                    <div class="startup-metric-val">500+</div>
+                    <div style="font-weight: 700; color: #111827; font-size: 0.92rem; margin-bottom: 0.2rem;">Negocios Afiliados</div>
+                    <div style="font-size: 0.78rem; color: #6B7280;">Hito proyectado a 12 meses</div>
+                </div>
+                <div class="startup-metric-box">
+                    <div class="startup-metric-val">25%</div>
+                    <div style="font-weight: 700; color: #111827; font-size: 0.92rem; margin-bottom: 0.2rem;">Penetración de Mercado</div>
+                    <div style="font-size: 0.78rem; color: #6B7280;">En Villa El Salvador (Lima Sur)</div>
+                </div>
+                <div class="startup-metric-box">
+                    <div class="startup-metric-val">15%</div>
+                    <div style="font-weight: 700; color: #111827; font-size: 0.92rem; margin-bottom: 0.2rem;">Conversión a Premium</div>
+                    <div style="font-size: 0.78rem; color: #6B7280;">Suscripción SaaS recurrente</div>
+                </div>
+                <div class="startup-metric-box">
+                    <div class="startup-metric-val">10,000+</div>
+                    <div style="font-weight: 700; color: #111827; font-size: 0.92rem; margin-bottom: 0.2rem;">Usuarios Activos (MAU)</div>
+                    <div style="font-size: 0.78rem; color: #6B7280;">Comensales mensuales en la app</div>
+                </div>
+            </div>
+
+            <!-- Modelo Freemium -->
+            <div class="startup-pricing-grid">
+                <!-- Plan Básico Gratuito -->
+                <div class="startup-pricing-card">
+                    <h3 style="font-size: 1.35rem; font-weight: 700; color: #111827; margin-bottom: 0.2rem;">Plan Básico Gratuito</h3>
+                    <div style="font-size: 2.2rem; font-weight: 800; font-family: 'Outfit', sans-serif; color: #111827; margin-bottom: 0.4rem;">
+                        S/ 0 <span style="font-size: 0.9rem; color: #6B7280; font-weight: 500;">/ mes</span>
+                    </div>
+                    <p style="font-size: 0.88rem; color: #6B7280; margin-bottom: 1.5rem; border-bottom: 1px solid #E5E7EB; padding-bottom: 1.2rem;">
+                        Inclusión digital sin costo de entrada para negocios tradicionales y carretilleros.
+                    </p>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.8rem; margin-bottom: 2rem; font-size: 0.92rem; color: #374151;">
+                        <li style="display: flex; align-items: center; gap: 0.6rem;"><i class="ph ph-check-circle" style="color: #FF6B00; font-size: 1.2rem;"></i> Presencia en el mapa gastronómico de VES</li>
+                        <li style="display: flex; align-items: center; gap: 0.6rem;"><i class="ph ph-check-circle" style="color: #FF6B00; font-size: 1.2rem;"></i> Perfil público con fotos, dirección y horarios</li>
+                        <li style="display: flex; align-items: center; gap: 0.6rem;"><i class="ph ph-check-circle" style="color: #FF6B00; font-size: 1.2rem;"></i> Botón directo de pedidos por WhatsApp</li>
+                        <li style="display: flex; align-items: center; gap: 0.6rem;"><i class="ph ph-check-circle" style="color: #FF6B00; font-size: 1.2rem;"></i> <strong>0% de comisión</strong> sobre pedidos</li>
+                    </ul>
+                    <a href="#afiliacion-terreno" class="btn btn-secondary" style="margin-top: auto; text-align: center;">
+                        Inclusión Para Todos los Comercios
+                    </a>
+                </div>
+
+                <!-- Plan Premium -->
+                <div class="startup-pricing-card featured">
+                    <div style="position: absolute; top: -12px; right: 20px; background: #FF6B00; color: #FFFFFF; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; padding: 0.25rem 0.8rem; border-radius: 9999px;">
+                        Monetización SaaS
+                    </div>
+                    <h3 style="font-size: 1.35rem; font-weight: 700; color: #111827; margin-bottom: 0.2rem;">Plan Premium</h3>
+                    <div style="font-size: 2.2rem; font-weight: 800; font-family: 'Outfit', sans-serif; color: #111827; margin-bottom: 0.4rem;">
+                        S/ 39 <span style="font-size: 0.9rem; color: #6B7280; font-weight: 500;">/ mes estimado</span>
+                    </div>
+                    <p style="font-size: 0.88rem; color: #6B7280; margin-bottom: 1.5rem; border-bottom: 1px solid #E5E7EB; padding-bottom: 1.2rem;">
+                        Posicionamiento estratégico y métricas para negocios con alta rotación comercial.
+                    </p>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.8rem; margin-bottom: 2rem; font-size: 0.92rem; color: #374151;">
+                        <li style="display: flex; align-items: center; gap: 0.6rem;"><i class="ph ph-check-circle" style="color: #FF6B00; font-size: 1.2rem;"></i> <strong>Posicionamiento destacado</strong> en búsquedas</li>
+                        <li style="display: flex; align-items: center; gap: 0.6rem;"><i class="ph ph-check-circle" style="color: #FF6B00; font-size: 1.2rem;"></i> Insignia oficial de <em>Huarique Verificado</em></li>
+                        <li style="display: flex; align-items: center; gap: 0.6rem;"><i class="ph ph-check-circle" style="color: #FF6B00; font-size: 1.2rem;"></i> Métricas mensuales de visualizaciones y clics</li>
+                        <li style="display: flex; align-items: center; gap: 0.6rem;"><i class="ph ph-check-circle" style="color: #FF6B00; font-size: 1.2rem;"></i> Promociones push y banner rotativo</li>
+                    </ul>
+                    <a href="#afiliacion-terreno" class="btn btn-primary" style="margin-top: auto; text-align: center; background: #FF6B00;">
+                        Consultar Escalamiento
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: AFILIACIÓN EN TERRENO (Para Dueños y Carretilleros) -->
+    <section id="afiliacion-terreno" class="startup-section startup-section-light">
+        <div class="container">
+            <div class="startup-onboarding-wrap">
+                <div class="startup-onboarding-grid">
+                    <div>
+                        <div class="startup-badge">
+                            <i class="ph ph-handshake"></i> Asistencia en Campo
+                        </div>
+                        <h2 style="font-size: 2rem; font-weight: 800; color: #111827; margin-bottom: 1.2rem; line-height: 1.28;">
+                            ¿Tienes un restaurante, huarique o carretilla? No te preocupes por la tecnología, nosotros vamos hacia ti.
+                        </h2>
+                        <p style="font-size: 1.02rem; color: #4B5563; line-height: 1.7; margin-bottom: 1.8rem;">
+                            Sabemos el gran esfuerzo que realizas desde la madrugada para cocinar y atender a tus clientes con el mejor sabor. No necesitas descargar programas difíciles ni perder horas aprendiendo. Al hacer clic, conversarás directamente con <strong>José Luis</strong>, nuestro coordinador de afiliaciones, quien se acercará personalmente a tu punto de venta en Villa El Salvador para ayudarte a registrar tu negocio paso a paso.
+                        </p>
+
+                        <div style="background: #F8F9FA; border: 1px solid #E5E7EB; border-radius: 14px; padding: 1.1rem 1.4rem; display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                            <div style="width: 56px; height: 56px; border-radius: 50%; overflow: hidden; border: 2px solid #FF6B00; flex-shrink: 0; background: #FFF4ED; display: flex; align-items: center; justify-content: center;">
+                                <img src="static/images/CEO_Alfaro.png" alt="José Luis Alfaro" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none';">
+                            </div>
+                            <div>
+                                <h4 style="margin: 0; font-size: 1.05rem; font-weight: 700; color: #111827;">José Luis Alfaro</h4>
+                                <p style="margin: 0; font-size: 0.85rem; color: #6B7280;">Coordinador de Afiliaciones en Terreno • ZavoR</p>
+                            </div>
+                        </div>
+
+                        <a href="https://wa.me/51939030861" target="_blank" rel="noopener noreferrer" class="startup-btn-whatsapp">
+                            <i class="ph ph-whatsapp-logo" style="font-size: 1.5rem;"></i>
+                            Escribir a José Luis por WhatsApp
+                        </a>
+                    </div>
+
+                    <div>
+                        <ul style="list-style: none; display: flex; flex-direction: column; gap: 1rem; background: #F8F9FA; border-radius: 16px; padding: 1.8rem; border: 1px solid #E5E7EB;">
+                            <li style="display: flex; align-items: flex-start; gap: 0.8rem; font-size: 0.92rem;">
+                                <i class="ph ph-camera" style="color: #FF6B00; font-size: 1.3rem; margin-top: 0.15rem; flex-shrink: 0;"></i>
+                                <div>
+                                    <strong style="color: #111827;">Tomamos las fotos de tus platos:</strong>
+                                    <p style="color: #6B7280; font-size: 0.84rem; margin-top: 0.2rem;">Capturamos imágenes nítidas de tu especialidad para que enamore a los vecinos en la app.</p>
+                                </div>
+                            </li>
+                            <li style="display: flex; align-items: flex-start; gap: 0.8rem; font-size: 0.92rem;">
+                                <i class="ph ph-pencil-line" style="color: #FF6B00; font-size: 1.3rem; margin-top: 0.15rem; flex-shrink: 0;"></i>
+                                <div>
+                                    <strong style="color: #111827;">Armamos tu carta y precios:</strong>
+                                    <p style="color: #6B7280; font-size: 0.84rem; margin-top: 0.2rem;">Registramos tus horarios y promociones sin que dejes de cocinar ni un minuto.</p>
+                                </div>
+                            </li>
+                            <li style="display: flex; align-items: flex-start; gap: 0.8rem; font-size: 0.92rem;">
+                                <i class="ph ph-map-pin" style="color: #FF6B00; font-size: 1.3rem; margin-top: 0.15rem; flex-shrink: 0;"></i>
+                                <div>
+                                    <strong style="color: #111827;">Fijamos tu punto exacto en el mapa:</strong>
+                                    <p style="color: #6B7280; font-size: 0.84rem; margin-top: 0.2rem;">Para que los vecinos del barrio lleguen caminando directamente a tu puesto físico o local.</p>
+                                </div>
+                            </li>
+                            <li style="display: flex; align-items: flex-start; gap: 0.8rem; font-size: 0.92rem;">
+                                <i class="ph ph-seal-percent" style="color: #FF6B00; font-size: 1.3rem; margin-top: 0.15rem; flex-shrink: 0;"></i>
+                                <div>
+                                    <strong style="color: #111827;">100% Gratuito y sin comisiones:</strong>
+                                    <p style="color: #6B7280; font-size: 0.84rem; margin-top: 0.2rem;">Sin letras chicas ni contratos restrictivos. Nuestro fin es el desarrollo de VES.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: HUB DE OPERACIONES Y RESPALDO INSTITUCIONAL -->
+    <section id="operaciones" class="startup-section" style="background: #FFFFFF;">
+        <div class="container">
+            <div class="section-header" style="text-align: center; max-width: 820px; margin: 0 auto 2.2rem;">
+                <div class="startup-badge">
+                    <i class="ph ph-buildings"></i> Centro de Innovación
+                </div>
+                <h2 class="section-title">Nuestro Centro de Operaciones e Innovación</h2>
+            </div>
+
+            <div style="text-align: center; max-width: 800px; margin: 0 auto 2.5rem; font-size: 1.05rem; line-height: 1.75; color: #4B5563;">
+                <p style="margin-bottom: 1.25rem;">
+                    Desarrollamos tecnología con impacto social desde la universidad. Concebimos, programamos y testeamos la arquitectura de software de ZavoR en los laboratorios de innovación de la <a href="https://www.untels.edu.pe/" target="_blank" style="color: #FF6B00; text-decoration: none; font-weight: bold;">Universidad Nacional Tecnológica de Lima Sur (UNTELS)</a>, articulando el rigor de la ingeniería de sistemas con las necesidades reales de los microempresarios gastronómicos de nuestro distrito.
+                </p>
+                <p>
+                    Asimismo, promovemos el ordenamiento económico, la formalización gradual y la modernización digital del ecosistema comercial, alineando nuestros esfuerzos con el desarrollo integral impulsado por la <a href="https://munives.gob.pe/WebSite/SistemaDeControlInterno.html" target="_blank" style="color: #FF6B00; text-decoration: none; font-weight: bold;">Municipalidad de Villa El Salvador</a>.
+                </p>
+            </div>
+
+            <!-- Contenedor iframe de Google Maps responsivo -->
+            <div class="startup-hub-iframe-container" style="width: 100%; max-width: 800px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); margin: 0 auto;">
+                <iframe 
+                    src="https://maps.google.com/maps?q=Universidad+Nacional+Tecnol%C3%B3gica+de+Lima+Sur+UNTELS+Villa+El+Salvador&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Centro de Operaciones ZavoR - UNTELS Villa El Salvador"
+                    style="width: 100%; height: 380px; border: 0; display: block; border-radius: 12px;">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
     <!-- Modal: Términos de Servicio -->
     <div id="termsModal" class="modal">
         <div class="modal-content" style="max-width: 560px; max-height: 85vh; overflow-y: auto;">
@@ -992,7 +1420,7 @@
                         <span style="color: white; font-family: 'Outfit', sans-serif; font-weight: 800;">ZavoR</span>
                     </a>
                     <p style="margin-top: 1rem; max-width: 320px; color: #AAAAAA;">
-                        La plataforma gastronómica creada por y para los vecinos de Villa El Salvador.
+                        La plataforma gastronómica hiperlocal pionera en Villa El Salvador. Impulsando la digitalización y visibilidad de huariques y carretillas.
                     </p>
                 </div>
 
@@ -1001,15 +1429,17 @@
                     <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem;">
                         <li><a href="#inicio" style="color: #AAAAAA;">Inicio</a></li>
                         <li><a href="#por-que-zavor" style="color: #AAAAAA;">Por qué Zavor</a></li>
-                        <li><a href="#sabor-ves" style="color: #AAAAAA;">Sabor Local</a></li>
                         <li><a href="#huariques" style="color: #AAAAAA;">Huariques</a></li>
-                        <li><a href="#nosotros" style="color: #AAAAAA;">Quiénes Somos</a></li>
+                        <li><a href="#nosotros" style="color: #AAAAAA;">Nosotros</a></li>
+                        <li><a href="#afiliacion-terreno" style="color: #AAAAAA;">Afiliación en Campo</a></li>
+                        <li><a href="#operaciones" style="color: #AAAAAA;">Hub de Innovación</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h4 style="color: white; margin-bottom: 1rem;">Legal & Ayuda</h4>
+                    <h4 style="color: white; margin-bottom: 1rem;">Legal & Inversionistas</h4>
                     <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <li><a href="#traccion-modelo" style="color: #AAAAAA;">Pitch Deck & Métricas</a></li>
                         <li><a href="javascript:void(0)" onclick="openModal('termsModal')"
                                 style="color: #AAAAAA; cursor: pointer; transition: color 0.2s;"
                                 onmouseover="this.style.color='var(--orange-primary)'"
@@ -1018,12 +1448,19 @@
                                 style="color: #AAAAAA; cursor: pointer; transition: color 0.2s;"
                                 onmouseover="this.style.color='var(--orange-primary)'"
                                 onmouseout="this.style.color='#AAAAAA'">Política de Privacidad</a></li>
-
                     </ul>
                 </div>
 
                 <div>
-                    <h4 style="color: white; margin-bottom: 1rem;">Síguenos</h4>
+                    <h4 style="color: white; margin-bottom: 1rem;">Contacto Corporativo</h4>
+                    <div style="display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1rem; font-size: 0.9rem;">
+                        <a href="mailto:soporte@zavorperu.com" style="color: #AAAAAA; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fa-solid fa-envelope" style="color: #FF6B00;"></i> soporte@zavorperu.com
+                        </a>
+                        <a href="https://wa.me/51939030861" target="_blank" rel="noopener noreferrer" style="color: #AAAAAA; display: flex; align-items: center; gap: 0.5rem;">
+                            <i class="fa-brands fa-whatsapp" style="color: #25D366;"></i> +51 939 030 861
+                        </a>
+                    </div>
                     <div style="display: flex; gap: 1rem; font-size: 1.2rem;">
                         <a href="https://www.facebook.com/profile.php?id=61592913501711" target="_blank"
                             rel="noopener noreferrer" class="text-orange"><i class="fa-brands fa-facebook"></i></a>
@@ -1035,7 +1472,7 @@
             </div>
 
             <div class="footer-bottom">
-                &copy; 2026 Zavor App - Todos los derechos reservados. Diseñado para Villa El Salvador, Lima - Perú.
+                ZavoR &copy; 2026. Todos los derechos reservados. Diseñado para Villa El Salvador, Lima - Perú.
             </div>
         </div>
     </footer>
