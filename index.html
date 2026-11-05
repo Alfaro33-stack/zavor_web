@@ -4,11 +4,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- SEO Principal y Metadatos de Busqueda -->
+    <title>ZavoR App | Todo cerca de ti — Villa El Salvador</title>
     <meta name="description"
-        content="Zavor - Encuentra los mejores huariques, pollerías, cebicherías y restaurantes ocultos de Villa El Salvador. Descarga directa del APK para Android.">
+        content="ZavoR: Todo cerca de ti. Encuentra los mejores huariques, pollerias y comida criolla de Villa El Salvador sin intermediarios. Liderado por el CEO Jose Luis Alfaro (UNTELS). ¡Descarga en Google Play!">
     <meta name="keywords"
-        content="Zavor, Huariques, Villa El Salvador, Pollerias, Cebicherias, Comida Peruana, Descargar APK Zavor, UNTELS">
-    <title>ZavoR App | Los Mejores Huariques de Villa El Salvador</title>
+        content="Zavor, ZavoR App, Todo cerca de ti, Huariques, Villa El Salvador, Pollerias, Cebicherias, Comida Peruana, Jose Luis Alfaro CEO, Jostink Hernandez, UNTELS, Gastronomia VES, Descargar Zavor Google Play">
+    <meta name="author" content="Jose Luis Alfaro - CEO & Co-Fundador de ZavoR App">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://zavorperu.com/">
+
+    <!-- Branding Movil y PWA -->
+    <meta name="theme-color" content="#FF7F00">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="manifest" href="site.webmanifest">
+
+    <!-- Favicon e Iconos para Buscadores (Google Search Logo & Snippet) -->
+    <link rel="icon" type="image/png" sizes="32x32" href="static/images/logo_transparent.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="static/images/logo_transparent.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="static/images/logo_transparent.png">
+    <link rel="shortcut icon" href="static/images/logo_transparent.png">
+
+    <!-- Open Graph / Meta Compartir (WhatsApp, Facebook, LinkedIn) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="ZavoR App — Todo cerca de ti | Villa El Salvador">
+    <meta property="og:description" content="Todo cerca de ti: descubre los mejores huariques, pollerias y la sazon autentica de Villa El Salvador sin intermediarios.">
+    <meta property="og:image" content="https://zavorperu.com/static/images/logo_transparent.png">
+    <meta property="og:url" content="https://zavorperu.com/">
+    <meta property="og:site_name" content="ZavoR App">
+    <meta property="og:locale" content="es_PE">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ZavoR App — Todo cerca de ti">
+    <meta name="twitter:description" content="Todo cerca de ti: encuentra los mejores huariques de Villa El Salvador con ZavoR App.">
+    <meta name="twitter:image" content="https://zavorperu.com/static/images/logo_transparent.png">
 
     <!-- Google Fonts (Poppins, Outfit, Plus Jakarta Sans) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,12 +52,180 @@
     <!-- FontAwesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="static/images/logo_transparent.png">
-
     <!-- Custom CSS (v31.0 con Solo Modo Claro activado) -->
     <link rel="stylesheet" href="static/css/styles.css?v=31.0">
 
+    <!-- Datos Estructurados Schema.org para Google Search (Logo, CEO, Organizacion y Subtitulos / Sitelinks con descripcion) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://zavorperu.com/#organization",
+          "name": "ZavoR App",
+          "alternateName": "ZavoR Villa El Salvador",
+          "slogan": "Todo cerca de ti",
+          "url": "https://zavorperu.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://zavorperu.com/static/images/logo_transparent.png",
+            "caption": "Logo Oficial de ZavoR App"
+          },
+          "image": "https://zavorperu.com/static/images/logo_transparent.png",
+          "description": "Plataforma web y movil gastronomica para visibilizar y conectar a comensales con huariques y restaurantes locales en Villa El Salvador sin intermediarios.",
+          "founder": {
+            "@type": "Person",
+            "@id": "https://zavorperu.com/#ceo-alfaro",
+            "name": "Jose Luis Alfaro",
+            "jobTitle": "Chief Executive Officer (CEO) & Co-Fundador",
+            "alumniOf": {
+              "@type": "EducationalOrganization",
+              "name": "Universidad Nacional Tecnologica de Lima Sur (UNTELS)"
+            },
+            "email": "alfaromendozajoseluis3@gmail.com",
+            "sameAs": [
+              "https://www.linkedin.com/in/jose-luis-alfaro-mendoza-71b59a3a2/",
+              "https://github.com/Alfaro33-stack"
+            ]
+          },
+          "sameAs": [
+            "https://www.facebook.com/profile.php?id=61592913501711",
+            "https://www.instagram.com/zavor_app/",
+            "https://www.tiktok.com/@zavorapp"
+          ]
+        },
+        {
+          "@type": "Person",
+          "@id": "https://zavorperu.com/#ceo-alfaro",
+          "name": "Jose Luis Alfaro",
+          "jobTitle": "CEO & Co-Fundador",
+          "worksFor": {
+            "@id": "https://zavorperu.com/#organization"
+          },
+          "description": "Estudiante de 8vo ciclo de Ingenieria de Sistemas (UNTELS) y CEO de ZavoR App. Lidera la estrategia tecnologica y de impacto social para el comercio gastronomico en Villa El Salvador.",
+          "image": "https://zavorperu.com/static/images/CEO_Alfaro.png",
+          "url": "https://www.linkedin.com/in/jose-luis-alfaro-mendoza-71b59a3a2/"
+        },
+        {
+          "@type": "Person",
+          "@id": "https://zavorperu.com/#jostink-hernandez",
+          "name": "Jostink Hernandez",
+          "jobTitle": "Co-Fundador & Desarrollador / Ingenieria",
+          "worksFor": {
+            "@id": "https://zavorperu.com/#organization"
+          },
+          "email": "soporte@zavorperu.com",
+          "image": "https://zavorperu.com/static/images/CEO_Jostink.png",
+          "url": "https://www.linkedin.com/in/jostink-alessandro-hernandez-cruces-618082268/",
+          "sameAs": [
+            "https://www.linkedin.com/in/jostink-alessandro-hernandez-cruces-618082268/",
+            "https://github.com/Alessandro1628"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://zavorperu.com/#website",
+          "url": "https://zavorperu.com",
+          "name": "ZavoR App | Todo cerca de ti",
+          "publisher": {
+            "@id": "https://zavorperu.com/#organization"
+          },
+          "inLanguage": "es-PE"
+        },
+        {
+          "@type": "ItemList",
+          "name": "Subtitulos y Enlaces de Sitio (Sitelinks)",
+          "itemListElement": [
+            {
+              "@type": "SiteNavigationElement",
+              "position": 1,
+              "name": "Huariques Destacados de VES",
+              "description": "Explora pollerias, cebicherias, chifas y anticucherias con la mejor sazon en Villa El Salvador.",
+              "url": "https://zavorperu.com/#huariques"
+            },
+            {
+              "@type": "SiteNavigationElement",
+              "position": 2,
+              "name": "Por que Zavor",
+              "description": "Plataforma sin comisiones abusivas para comensales y emprendedores gastronomicos de VES.",
+              "url": "https://zavorperu.com/#por-que-zavor"
+            },
+            {
+              "@type": "SiteNavigationElement",
+              "position": 3,
+              "name": "Quienes Somos & Historia",
+              "description": "Iniciativa tecnologica y social desarrollada por estudiantes de Ingenieria de Sistemas de la UNTELS.",
+              "url": "https://zavorperu.com/#nosotros"
+            },
+            {
+              "@type": "SiteNavigationElement",
+              "position": 4,
+              "name": "Impacto Social ODS",
+              "description": "Alineados con la Agenda 2030 de la ONU impulsando el trabajo decente y el comercio de proximidad.",
+              "url": "https://zavorperu.com/#ods"
+            },
+            {
+              "@type": "SiteNavigationElement",
+              "position": 5,
+              "name": "Disponible en Google Play",
+              "description": "Descarga gratuita de la app oficial de ZavoR para telefonos inteligentes Android.",
+              "url": "https://play.google.com/store/apps/details?id=com.zavor.app&hl=es_PE"
+            }
+          ]
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://zavorperu.com/#app",
+          "name": "ZavoR App",
+          "operatingSystem": "Android",
+          "applicationCategory": "Food & Drink",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "PEN"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "ratingCount": "128",
+            "reviewCount": "128"
+          },
+          "installUrl": "https://play.google.com/store/apps/details?id=com.zavor.app&hl=es_PE"
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://zavorperu.com/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "¿Que es ZavoR y como funciona en Villa El Salvador?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "ZavoR es una plataforma y app movil desarrollada por estudiantes de Ingenieria de Sistemas de la UNTELS para geolocalizar y conectar comensales con los mejores huariques, pollerias y restaurantes locales en Villa El Salvador sin comisiones intermediarias."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Quien es el CEO y fundador de ZavoR?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "El CEO y Co-Fundador de ZavoR es Jose Luis Alfaro, estudiante de 8vo ciclo de Ingenieria de Sistemas en la UNTELS."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Como descargar la aplicacion oficial ZavoR?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Puedes descargar ZavoR gratis desde Google Play Store para cualquier telefono inteligente Android."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
 </head>
 
 <body>
@@ -65,9 +265,9 @@
                     <i class="fa-solid fa-bars"></i>
                 </button>
 
-                <a href="https://firebasestorage.googleapis.com/v0/b/zavor-fe238.firebasestorage.app/o/app%2FZavoR.apk?alt=media&token=0eb9a994-aa87-436d-93e8-aa8019c175c8"
-                    target="_blank" class="btn btn-primary nav-apk-btn">
-                    <i class="fa-brands fa-android"></i> <span class="nav-btn-text">Descargar APK</span>
+                <a href="https://play.google.com/store/apps/details?id=com.zavor.app"
+                    target="_blank" class="btn btn-primary nav-apk-btn" rel="noopener noreferrer">
+                    <i class="fa-brands fa-google-play"></i> <span class="nav-btn-text">Google Play</span>
                 </a>
             </div>
         </div>
@@ -111,10 +311,10 @@
 
 
         <div style="margin-top: 2rem;">
-            <a href="https://firebasestorage.googleapis.com/v0/b/zavor-fe238.firebasestorage.app/o/app%2FZavoR.apk?alt=media&token=0eb9a994-aa87-436d-93e8-aa8019c175c8"
+            <a href="https://play.google.com/store/apps/details?id=com.zavor.app"
                 target="_blank" onclick="closeMobileNav();" class="btn btn-primary"
-                style="width: 100%; justify-content: center;">
-                <i class="fa-brands fa-android"></i> Descargar Zavor App (APK)
+                style="width: 100%; justify-content: center;" rel="noopener noreferrer">
+                <i class="fa-brands fa-google-play"></i> Disponible en Google Play
             </a>
         </div>
     </div>
@@ -147,9 +347,9 @@
 
                     <!-- 4. Botones de Acción -->
                     <div class="hero-cta" style="margin-bottom: 1.5rem;">
-                        <a href="https://firebasestorage.googleapis.com/v0/b/zavor-fe238.firebasestorage.app/o/app%2FZavoR.apk?alt=media&token=0eb9a994-aa87-436d-93e8-aa8019c175c8"
-                            target="_blank" class="btn btn-primary btn-large">
-                            <i class="fa-solid fa-download"></i> Descargar Zavor App (APK)
+                        <a href="https://play.google.com/store/apps/details?id=com.zavor.app"
+                            target="_blank" class="btn btn-primary btn-large" rel="noopener noreferrer">
+                            <i class="fa-brands fa-google-play"></i> Disponible en Google Play
                         </a>
 
                         <a href="#huariques" class="btn btn-secondary btn-large">
@@ -160,13 +360,13 @@
                     <!-- 5. Info Tags del APK -->
                     <div class="apk-info" style="margin-bottom: 2rem;">
                         <div class="apk-info-item">
-                            <i class="fa-solid fa-shield-halved text-orange"></i> Libre de Virus / APK Seguro
+                            <i class="fa-solid fa-shield-halved text-orange"></i> Verificado por Play Protect
                         </div>
                         <div class="apk-info-item">
                             <i class="fa-solid fa-mobile-screen-button text-orange"></i> Android 7.0+
                         </div>
                         <div class="apk-info-item">
-                            <i class="fa-solid fa-bolt text-orange"></i> Descarga Directa
+                            <i class="fa-brands fa-google-play text-orange"></i> Google Play Store
                         </div>
                     </div>
 
@@ -279,9 +479,9 @@
                             nuestro distrito
                         </li>
                     </ul>
-                    <a href="https://firebasestorage.googleapis.com/v0/b/zavor-fe238.firebasestorage.app/o/app%2FZavoR.apk?alt=media&token=0eb9a994-aa87-436d-93e8-aa8019c175c8"
-                        target="_blank" class="btn btn-primary">
-                        <i class="fa-brands fa-android"></i> Probar Zavor en VES
+                    <a href="https://play.google.com/store/apps/details?id=com.zavor.app"
+                        target="_blank" class="btn btn-primary" rel="noopener noreferrer">
+                        <i class="fa-brands fa-google-play"></i> Probar Zavor en VES
                     </a>
                 </div>
                 <div class="ves-img-container">
@@ -312,8 +512,8 @@
 
             <div style="text-align: center; margin-top: 2rem;">
                 <p style="font-weight: 500; font-size: 1.1rem; color: var(--text-main); margin-bottom: 1.5rem;">Descarga la app y explora el mapa completo de Villa El Salvador.</p>
-                <a href="https://firebasestorage.googleapis.com/v0/b/zavor-fe238.firebasestorage.app/o/app%2FZavoR.apk?alt=media&token=0eb9a994-aa87-436d-93e8-aa8019c175c8" class="btn btn-primary" style="padding: 1rem 2rem; font-size: 1.1rem;">
-                    <i class="fa-brands fa-android"></i> Descargar Zavor
+                <a href="https://play.google.com/store/apps/details?id=com.zavor.app" class="btn btn-primary" style="padding: 1rem 2rem; font-size: 1.1rem;">
+                    <i class="fa-brands fa-google-play"></i> Descargar en Google Play
                 </a>
             </div>
         </div>
@@ -365,14 +565,6 @@
                             rel="noopener noreferrer" class="text-orange" title="LinkedIn"
                             style="width: 32px; height: 32px; background: var(--bg-orange-soft); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border-orange); font-size: 0.85rem;"><i
                                 class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="https://www.facebook.com/profile.php?id=61585653447183" target="_blank"
-                            rel="noopener noreferrer" class="text-orange" title="Facebook"
-                            style="width: 32px; height: 32px; background: var(--bg-orange-soft); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border-orange); font-size: 0.85rem;"><i
-                                class="fa-brands fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/alfaromendozajoseluis3/" target="_blank"
-                            rel="noopener noreferrer" class="text-orange" title="Instagram"
-                            style="width: 32px; height: 32px; background: var(--bg-orange-soft); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border-orange); font-size: 0.85rem;"><i
-                                class="fa-brands fa-instagram"></i></a>
                         <a href="https://github.com/Alfaro33-stack" target="_blank" rel="noopener noreferrer"
                             class="text-orange" title="GitHub"
                             style="width: 32px; height: 32px; background: var(--bg-orange-soft); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border-orange); font-size: 0.85rem;"><i
@@ -419,19 +611,13 @@
                     <!-- Íconos de Redes Debajo del Nombre -->
                     <div
                         style="display: flex; gap: 0.5rem; align-items: center; justify-content: center; margin-bottom: 0.8rem;">
-                        <a href="#" target="_blank" rel="noopener noreferrer" class="text-orange" title="LinkedIn"
+                        <a href="https://www.linkedin.com/in/jostink-alessandro-hernandez-cruces-618082268/" target="_blank" rel="noopener noreferrer" class="text-orange" title="LinkedIn"
                             style="width: 32px; height: 32px; background: var(--bg-orange-soft); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border-orange); font-size: 0.85rem;"><i
                                 class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#" target="_blank" rel="noopener noreferrer" class="text-orange" title="Facebook"
-                            style="width: 32px; height: 32px; background: var(--bg-orange-soft); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border-orange); font-size: 0.85rem;"><i
-                                class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#" target="_blank" rel="noopener noreferrer" class="text-orange" title="Instagram"
-                            style="width: 32px; height: 32px; background: var(--bg-orange-soft); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border-orange); font-size: 0.85rem;"><i
-                                class="fa-brands fa-instagram"></i></a>
-                        <a href="#" target="_blank" rel="noopener noreferrer" class="text-orange" title="GitHub"
+                        <a href="https://github.com/Alessandro1628" target="_blank" rel="noopener noreferrer" class="text-orange" title="GitHub"
                             style="width: 32px; height: 32px; background: var(--bg-orange-soft); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border-orange); font-size: 0.85rem;"><i
                                 class="fa-brands fa-github"></i></a>
-                        <a href="mailto:contacto@zavor.pe" class="text-orange" title="Correo Contacto"
+                        <a href="mailto:soporte@zavorperu.com" class="text-orange" title="Correo Contacto"
                             style="width: 32px; height: 32px; background: var(--bg-orange-soft); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1px solid var(--border-orange); font-size: 0.85rem;"><i
                                 class="fa-solid fa-envelope"></i></a>
                     </div>
@@ -596,8 +782,8 @@
             </div>
 
             <div style="text-align: center; margin-top: 2rem;">
-                <a href="https://firebasestorage.googleapis.com/v0/b/zavor-fe238.firebasestorage.app/o/app%2FZavoR.apk?alt=media&token=0eb9a994-aa87-436d-93e8-aa8019c175c8" class="btn btn-primary" style="padding: 1rem 2rem; font-size: 1.1rem;">
-                    Descargar Zavor y ser parte de esto
+                <a href="https://play.google.com/store/apps/details?id=com.zavor.app" class="btn btn-primary" style="padding: 1rem 2rem; font-size: 1.1rem;">
+                    <i class="fa-brands fa-google-play"></i> Descargar Zavor en Google Play
                 </a>
             </div>
         </div>
@@ -608,12 +794,11 @@
         <section class="cta-banner">
             <h2 class="cta-title">¿Listo para probar el verdadero sabor de VES?</h2>
             <p class="cta-desc">
-                Instala la aplicación Zavor ahora mismo directamente en tu celular Android. ¡Empieza a descubrir
-                huariques hoy!
+                Instala la aplicación oficial de Zavor directamente desde Google Play Store. ¡Empieza a descubrir huariques hoy!
             </p>
-            <a href="https://firebasestorage.googleapis.com/v0/b/zavor-fe238.firebasestorage.app/o/app%2FZavoR.apk?alt=media&token=0eb9a994-aa87-436d-93e8-aa8019c175c8"
-                target="_blank" class="btn btn-primary btn-large">
-                <i class="fa-brands fa-android"></i> Descargar Zavor (APK) v1.0
+            <a href="https://play.google.com/store/apps/details?id=com.zavor.app"
+                target="_blank" class="btn btn-primary btn-large" rel="noopener noreferrer">
+                <i class="fa-brands fa-google-play"></i> Disponible en Google Play
             </a>
         </section>
     </div>
