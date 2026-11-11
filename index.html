@@ -46,7 +46,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&family=Outfit:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
     <!-- FontAwesome 6 -->
@@ -93,7 +93,20 @@
             "https://www.facebook.com/profile.php?id=61592913501711",
             "https://www.instagram.com/zavor_app/",
             "https://www.tiktok.com/@zavorapp"
-          ]
+          ],
+          "hasMap": "https://www.google.com/maps/place/ZavoR/@-12.2143777,-76.9352951,17z/data=!3m1!4b1!4m6!3m5!1s0x9105b9425cec193f:0x1ae97acfd31b63f1!8m2!3d-12.214383!4d-76.9327202",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Av. Central con Av. Bolivar (Campus UNTELS)",
+            "addressLocality": "Villa El Salvador",
+            "addressRegion": "Lima",
+            "addressCountry": "PE"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": -12.214383,
+            "longitude": -76.9327202
+          }
         },
         {
           "@type": "Person",
@@ -710,7 +723,7 @@
                         style="max-height: 36px; width: auto; object-fit: contain;">
                 </div>
                 <span
-                    style="font-family: 'Outfit', sans-serif; font-weight: 800; color: var(--text-main); font-size: 1.35rem;">ZavoR</span>
+                    style="font-family: 'Inter', sans-serif; font-weight: 500; color: var(--text-main); font-size: 1.5rem; letter-spacing: -0.2px;">ZavoR</span>
                 <span class="logo-badge">VES</span>
             </div>
             <button class="mobile-drawer-close" onclick="closeMobileNav()">
@@ -1431,15 +1444,24 @@
                 </p>
             </div>
 
-            <!-- Contenedor iframe de Google Maps responsivo -->
-            <div class="b2b-hub-map-wrap" style="width: 100%; max-width: 800px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); margin: 0 auto;">
+            <!-- Contenedor iframe de Google Maps responsivo con la ubicación oficial de ZavoR en UNTELS -->
+            <div class="b2b-hub-map-wrap" style="width: 100%; max-width: 860px; border-radius: 16px; overflow: hidden; box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08); border: 1px solid #E5E7EB; margin: 0 auto; background: #FFFFFF;">
                 <iframe 
-                    src="https://maps.google.com/maps?q=Universidad+Nacional+Tecnol%C3%B3gica+de+Lima+Sur+UNTELS+Villa+El+Salvador&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.224854581452!2d-76.9352951!3d-12.2143777!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b9425cec193f%3A0x1ae97acfd31b63f1!2sZavoR!5e0!3m2!1ses!2spe!4v1731310000000!5m2!1ses!2spe"
                     loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"
                     title="Centro de Operaciones ZavoR - UNTELS Villa El Salvador"
-                    style="width: 100%; height: 380px; border: 0; display: block; border-radius: 12px;">
+                    style="width: 100%; height: 420px; border: 0; display: block;">
                 </iframe>
+                <div style="padding: 1rem 1.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; background: #F8F9FA; border-top: 1px solid #E5E7EB;">
+                    <div style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.95rem; color: #374151;">
+                        <i class="fa-solid fa-location-dot" style="color: #FF6B00; font-size: 1.15rem;"></i>
+                        <span><strong>Centro de Operaciones ZavoR:</strong> Campus UNTELS, Villa El Salvador, Lima Sur</span>
+                    </div>
+                    <a href="https://www.google.com/maps/place/ZavoR/@-12.2143777,-76.9352951,17z/data=!3m1!4b1!4m6!3m5!1s0x9105b9425cec193f:0x1ae97acfd31b63f1!8m2!3d-12.214383!4d-76.9327202" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.5rem; background: #FFFFFF; border: 1px solid #D1D5DB; padding: 0.55rem 1.15rem; border-radius: 9999px; color: #111827; font-size: 0.88rem; font-weight: 700; text-decoration: none; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.04);">
+                        <i class="fa-solid fa-arrow-up-right-from-square" style="color: #FF6B00;"></i> Abrir en Google Maps
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -1629,13 +1651,16 @@
                             <img src="static/images/logo_transparent.png" alt="Zavor Logo"
                                 style="width: 100%; height: 100%; object-fit: contain;">
                         </div>
-                        <span style="color: #FFFFFF; font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1.45rem;">Zavo<span style="color: #FF6B00;">R</span></span>
+                        <span style="font-family: 'Inter', sans-serif; font-weight: 500; color: #FFFFFF; font-size: 1.6rem; letter-spacing: -0.2px;">ZavoR</span>
+                        <span class="logo-badge">VES</span>
                     </a>
                     <p style="margin-top: 1rem; max-width: 320px; color: #9CA3AF; line-height: 1.65; font-size: 0.925rem;">
                         La plataforma gastronómica hiperlocal creada por y para los vecinos de Villa El Salvador. Impulsando la digitalización y visibilidad de huariques y carretillas.
                     </p>
                     <div style="font-size: 0.85rem; color: #9CA3AF; margin-top: 0.8rem; display: flex; align-items: center; gap: 0.4rem;">
-                        <i class="ph ph-map-pin" style="color: #FF6B00;"></i> Villa El Salvador, Lima Sur, Perú
+                        <a href="https://www.google.com/maps/place/ZavoR/@-12.2143777,-76.9352951,17z/data=!3m1!4b1!4m6!3m5!1s0x9105b9425cec193f:0x1ae97acfd31b63f1!8m2!3d-12.214383!4d-76.9327202" target="_blank" rel="noopener noreferrer" style="color: #9CA3AF; text-decoration: none; display: inline-flex; align-items: center; gap: 0.4rem; transition: color 0.2s;" onmouseover="this.style.color='#FF6B00'" onmouseout="this.style.color='#9CA3AF'">
+                            <i class="ph ph-map-pin" style="color: #FF6B00;"></i> UNTELS, Villa El Salvador, Lima Sur
+                        </a>
                     </div>
                 </div>
 
